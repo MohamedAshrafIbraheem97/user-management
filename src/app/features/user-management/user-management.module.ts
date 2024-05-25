@@ -6,6 +6,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ViewUserComponent } from './components/view-user/view-user.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ViewUserComponent } from './components/view-user/view-user.component';
     AddUserComponent,
     EditUserComponent,
     ListUsersComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
