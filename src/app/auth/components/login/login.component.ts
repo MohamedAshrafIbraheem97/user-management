@@ -11,7 +11,11 @@ import { Router } from "@angular/router";
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -21,10 +25,15 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
-    if (this.authService.login(this.loginForm.value.email, this.loginForm.value.password)) {      
-      this.router.navigate(['/user-management']);
+    if (
+      this.authService.login(
+        this.loginForm.value.email,
+        this.loginForm.value.password,
+      )
+    ) {
+      this.router.navigate(["/user-management"]);
     } else {
-      alert('Invalid credentials');
+      alert("Invalid credentials");
     }
   }
 }

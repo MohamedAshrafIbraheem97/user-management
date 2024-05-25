@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Role } from 'src/app/core/enums/role';
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+import { Role } from "src/app/core/enums/role";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthService {
   private currentUserRole!: Role;
@@ -16,11 +16,11 @@ export class AuthService {
   }
 
   login(username: string, password: string): boolean {
-    if (username === 'a@a.com' && password === 'admin') {
+    if (username === "a@a.com" && password === "admin") {
       this.currentUserRole = Role.Admin;
       this.loggedIn = true;
       return true;
-    } else if (username === 'u@u.com' && password === 'user') {
+    } else if (username === "u@u.com" && password === "user") {
       this.currentUserRole = Role.User;
       this.loggedIn = true;
       return true;
@@ -31,7 +31,7 @@ export class AuthService {
   logout(): void {
     this.loggedIn = false;
     this.currentUserRole = Role.None;
-    this.router.navigate(['/login']);
+    this.router.navigate(["/login"]);
   }
 
   getUserRole(): Role {

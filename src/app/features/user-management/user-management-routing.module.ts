@@ -14,31 +14,33 @@ const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
-  },
-  {
-    path: "users",
-    component: ListUsersComponent,
-    canActivate: [authGuard, roleGuard],
-    data: { expectedRole: Role.Admin },
-  },
-  {
-    path: "users/add",
-    component: AddUserComponent,
-    canActivate: [authGuard, roleGuard],
-    data: { expectedRole: Role.Admin },
-  },
-  {
-    path: "users/edit/:id",
-    component: EditUserComponent,
-    canActivate: [authGuard, roleGuard],
-    data: { expectedRole: Role.Admin },
-    resolve: { user: userResolver },
-  },
-  {
-    path: "users/view/:id",
-    component: ViewUserComponent,
-    canActivate: [authGuard],
-    resolve: { user: userResolver },
+    children:[
+      {
+        path: "users",
+        component: ListUsersComponent,
+        canActivate: [authGuard, roleGuard],
+        data: { expectedRole: Role.Admin },
+      },
+      {
+        path: "add",
+        component: AddUserComponent,
+        canActivate: [authGuard, roleGuard],
+        data: { expectedRole: Role.Admin },
+      },
+      {
+        path: "edit/:id",
+        component: EditUserComponent,
+        canActivate: [authGuard, roleGuard],
+        data: { expectedRole: Role.Admin },
+        resolve: { user: userResolver },
+      },
+      {
+        path: "view/:id",
+        component: ViewUserComponent,
+        canActivate: [authGuard],
+        resolve: { user: userResolver },
+      },
+    ]
   },
 ];
 
