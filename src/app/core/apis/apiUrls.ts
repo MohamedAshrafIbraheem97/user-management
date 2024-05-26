@@ -1,4 +1,4 @@
 export const URLs = {
-    allUsers:"users",
-    singleUser:"users/",    
+    users:"users",
+    singleUser:"users",    
 }
