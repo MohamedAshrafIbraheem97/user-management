@@ -7,6 +7,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ViewUserComponent } from './components/view-user/view-user.component';
 import { HomeComponent } from './components/home/home.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     CommonModule,
-    UserManagementRoutingModule
+    UserManagementRoutingModule,
+    SharedModule
   ]
 })
 export class UserManagementModule { }

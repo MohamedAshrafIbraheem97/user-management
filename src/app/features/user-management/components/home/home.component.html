@@ -1,5 +1,18 @@
 <div class="container">
     <h3>Welcome to the User Management System</h3>
+    <nav>
+      <ul>
+        <li *appRole="[Role.User]">
+            <a routerLink="view/1">View Your Profile</a>
+        </li>
+        <li *appRole="[Role.Admin]">
+            <a routerLink="users">List Users</a>
+        </li>
+        <li *appRole="[Role.Admin]">
+            <a routerLink="add">Add User</a>
+        </li>
+      </ul>
+    </nav>
     <router-outlet></router-outlet>
-</div>
+  </div>
   
